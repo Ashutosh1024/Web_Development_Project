@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamTrack - Sleep Tracker</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-navy-900 { background-color: #070d1f; }
+        .bg-navy-800 { background-color: #0d1b3e; }
+        .bg-navy-700 { background-color: #1a237e; }
+        .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-navy-900">
+    <!-- Navbar -->
+    <nav class="bg-navy-900 text-white py-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="moon" class="w-8 h-8 text-blue-400"></i>
+                    <span class="text-xl font-bold">DreamTrack</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="/Home.html" class="hover:text-blue-400 transition-colors">Home</a>
+                    <a href="/Benefits.html" class="hover:text-blue-400 transition-colors">Benefits</a>
+                    <a href="/Features.html" class="hover:text-blue-400 transition-colors">Features</a>
+                    <a href="/Company.html" class="hover:text-blue-400 transition-colors">Our Company</a>
+                </div>
+                
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-20 flex items-center bg-gradient-to-b from-navy-900 to-navy-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-white">
+                    <h1 class="text-5xl font-bold mb-6">Track Your Sleep, <br>Improve Your Life</h1>
+                    <p class="text-xl text-blue-200 mb-8">Monitor your sleep patterns and wake up refreshed with our advanced sleep tracking technology.</p>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full transition-colors">
+                        Get Started
+                    </button>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0" id="ip">
+                    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80" 
+                         alt="Peaceful sleep" 
+                         class="rounded-lg shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section">
+        
+        <div class="image-container" style="text-align: center;">
+            
+            <p class="description">Track your sleep patterns and improve your health.</p>
+        </div>
+        <form id="sleepForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" required>
+
+            <label for="endTime">End Time:</label>
+            <input type="time" id="endTime" required>
+
+            <button type="button" onclick="addSleep()">Add Sleep Data</button>
+        </form>
+        <style>
+            
+            .section {
+                color: white;
+                background: rgba(45, 45, 75, 0.9);
+                margin: 2rem auto;
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+            }
+    
+            .section h2 {
+                text-align: center;
+                color: #FFD700;
+                margin-bottom: 1rem;
+            }
+            table {
+                
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 1.5rem;
+            }
+    
+            th, td {
+                border: 1px solid #ddd;
+                padding: 0.5rem;
+                text-align: center;
+            }
+    
+            th {
+                background-color: #333;
+                color: #fff;
+            }
+    
+            td {
+                background-color: #555;
+            }
+    
+            .empty {
+                text-align: center;
+                font-style: italic;
+                color: #999;
+            }
+    
+            input, button {
+                width: 100%;
+                padding: 0.5rem;
+                margin-top: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+    
+            button {
+                background-color: #4CAF50;
+                color: white;
+                font-size: 1rem;
+                cursor: pointer;
+                border: none;
+            }
+    
+            button:hover {
+                background-color: #45a049;
+            }
+            #sub{
+                margin-bottom: 40px;;
+            }
+            #but{
+                margin-bottom: 40px;
+            }
+            #foo{
+                margin-top: 50px;
+            }
+            #ip{
+                margin-left: 40px;
+            }
+    
+        </style>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Duration (hrs)</th>
+                </tr>
+            </thead>
+            <tbody id="sleepData">
+                <tr>
+                    <td colspan="4" class="empty">No sleep data added yet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    <script>
+        function addSleep() {
+            const date = document.getElementById("date").value;
+            const startTime = document.getElementById("startTime").value;
+            const endTime = document.getElementById("endTime").value;
+    
+            // Validation to ensure all fields are filled
+            if (!date || !startTime || !endTime) {
+                alert("Please fill in all fields.");
+                return;
+            }
+    
+            const start = new Date(`${date}T${startTime}`);
+            let end = new Date(`${date}T${endTime}`);
+    
+            // Handle case where sleep spans midnight
+            if (end <= start) {
+                end.setDate(end.getDate() + 1);
+            }
+    
+            // Calculate the duration in hours
+            const duration = ((end - start) / 1000 / 60 / 60).toFixed(2);
+    
+            // Update the table
+            const tableBody = document.getElementById("sleepData");
+            const emptyRow = tableBody.querySelector(".empty");
+    
+            // Remove placeholder row if it exists
+            if (emptyRow) {
+                emptyRow.remove();
+            }
+    
+            // Create a new row for the table
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td>${date}</td>
+                <td>${startTime}</td>
+                <td>${endTime}</td>
+                <td>${duration}</td>
+            `;
+    
+            // Append the new row to the table
+            tableBody.appendChild(newRow);
+    
+            // Reset the form fields
+            document.getElementById("sleepForm").reset();
+        }
+    
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+    
+  <!--Stats-->
+  <section id="stats" class="py-16 bg-navy-900 text-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-8">Why Choose DreamTrack?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-navy-800 rounded-lg border border-blue-400 shadow-lg">
+                <h3 class="text-5xl font-bold text-blue-400">10M+</h3>
+                <p class="text-blue-200 mt-2">Users Worldwide</p>
+            </div>
+            <div class="p-6 bg-navy-800 rounded-lg border border-blue-400 shadow-lg">
+                <h3 class="text-5xl font-bold text-blue-400">98%</h3>
+                <p class="text-blue-200 mt-2">User Satisfaction</p>
+            </div>
+            <div class="p-6 bg-navy-800 rounded-lg border border-blue-400 shadow-lg">
+                <h3 class="text-5xl font-bold text-blue-400">5M+</h3>
+                <p class="text-blue-200 mt-2">Hours of Sleep Tracked</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Us Section -->
+<section id="contact" class="py-16 bg-navy-800 text-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
+        <form id="contactForm" class="max-w-lg mx-auto">
+            <div class="mb-4">
+                <label for="name" class="block text-blue-200 mb-2">Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-navy-900 text-white border border-blue-400 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-blue-200 mb-2">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-navy-900 text-white border border-blue-400 focus:outline-none">
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-blue-200 mb-2">Message</label>
+                <textarea id="message" class="w-full px-4 py-2 rounded-lg bg-navy-900 text-white border border-blue-400 focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full text-white transition-colors w-full" id="sub">Send</button>
+        </form>
+    </div>
+
+    <!--CTA-->
+    <section id="cta" class="py-12 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-4">Start Your Journey to Better Sleep</h2>
+            <p class="text-lg mb-6">Download the DreamTrack app today and take control of your sleep patterns.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.blup.dreamtracker&hl=en-IN" target="_blank"><button class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-100 transition-colors" id="but">
+                Download Now
+            </button></a>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="py-8 bg-navy-900 text-center text-white" id="foo">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-center space-x-4 mb-4">
+            <a href="#" class="hover:text-blue-400"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+            <a href="#" class="hover:text-blue-400"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+        </div>
+        <p class="text-blue-200">© 2024 DreamTrack. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

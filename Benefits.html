@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefits of Sleep Tracking</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-navy-900 { background-color: #070d1f; }
+        .bg-navy-800 { background-color: #0d1b3e; }
+        .bg-navy-700 { background-color: #1a237e; }
+        .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-navy-900">
+   <!-- Navbar -->
+   <nav class="bg-navy-900 text-white py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="moon" class="w-8 h-8 text-blue-400"></i>
+                <span class="text-xl font-bold">DreamTrack</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="/Home.html" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="/Benefits.html" class="hover:text-blue-400 transition-colors">Benefits</a>
+                <a href="/Features.html" class="hover:text-blue-400 transition-colors">Features</a>
+                <a href="/Company.html" class="hover:text-blue-400 transition-colors">Our Company</a>
+            </div>
+            
+            <button class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-navy-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-white text-center mb-12">Benefits of Sleep Tracking</h2>
+            
+            <!-- Benefits Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-navy-700 p-6 rounded-lg hover-scale group">
+                    <i data-lucide="brain" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Improved Cognitive Function</h3>
+                    <p class="text-blue-200 group-hover:text-white transition-all">
+                        Better sleep enhances memory, focus, and decision-making abilities.
+                    </p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg hover-scale group">
+                    <i data-lucide="heart" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Better Heart Health</h3>
+                    <p class="text-blue-200 group-hover:text-white transition-all">
+                        Quality sleep helps maintain healthy blood pressure and heart health.
+                    </p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg hover-scale group">
+                    <i data-lucide="battery" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Increased Energy</h3>
+                    <p class="text-blue-200 group-hover:text-white transition-all">
+                        Track your sleep cycles to wake up naturally and feel more energized.
+                    </p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg hover-scale group">
+                    <i data-lucide="smile" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Enhanced Mood</h3>
+                    <p class="text-blue-200 group-hover:text-white transition-all">
+                        Regular sleep patterns contribute to better emotional well-being.
+                    </p>
+                </div>
+            </div>
+
+            <!-- New Section: Sleep Benefits Quiz -->
+            <div class="bg-navy-700 mt-12 p-8 rounded-lg shadow-lg">
+                <h3 class="text-3xl font-bold text-white text-center mb-6">Take the Sleep Benefits Quiz!</h3>
+                <p class="text-blue-200 text-center mb-6">
+                    Test your knowledge and discover fascinating facts about how sleep improves your life.
+                </p>
+                <div class="text-center">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full transition-colors">
+                        Start Quiz
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Section: Testimonials -->
+            <div class="bg-navy-700 mt-12 p-8 rounded-lg shadow-lg">
+                <h3 class="text-3xl font-bold text-white text-center mb-6">Testimonials</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-navy-800 p-6 rounded-lg">
+                        <p class="text-blue-200 italic">
+                            "DreamTrack helped me realize I was sleeping too little. Now, I feel energized every day!"
+                        </p>
+                        <p class="text-white mt-4 text-right">- Sarah T.</p>
+                    </div>
+                    <div class="bg-navy-800 p-6 rounded-lg">
+                        <p class="text-blue-200 italic">
+                            "Thanks to sleep tracking, my mood has improved drastically. Highly recommended!"
+                        </p>
+                        <p class="text-white mt-4 text-right">- John D.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Section: Interactive Tips -->
+            <div class="bg-navy-700 mt-12 p-8 rounded-lg shadow-lg">
+                <h3 class="text-3xl font-bold text-white text-center mb-6">Did You Know?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-navy-800 p-6 rounded-lg group hover:bg-blue-500 transition-colors">
+                        <i data-lucide="sunrise" class="w-12 h-12 text-blue-400 group-hover:text-white mb-4"></i>
+                        <p class="text-blue-200 group-hover:text-white">
+                            Waking up during light sleep leads to a more refreshed feeling.
+                        </p>
+                    </div>
+                    <div class="bg-navy-800 p-6 rounded-lg group hover:bg-blue-500 transition-colors">
+                        <i data-lucide="moon" class="w-12 h-12 text-blue-400 group-hover:text-white mb-4"></i>
+                        <p class="text-blue-200 group-hover:text-white">
+                            Consistent sleep schedules improve overall health and focus.
+                        </p>
+                    </div>
+                    <div class="bg-navy-800 p-6 rounded-lg group hover:bg-blue-500 transition-colors">
+                        <i data-lucide="clock" class="w-12 h-12 text-blue-400 group-hover:text-white mb-4"></i>
+                        <p class="text-blue-200 group-hover:text-white">
+                            Adults should aim for 7-9 hours of sleep for optimal performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initialize Lucide icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

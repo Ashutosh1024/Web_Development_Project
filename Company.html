@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Company - DreamTrack</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-navy-900 { background-color: #070d1f; }
+        .bg-navy-800 { background-color: #0d1b3e; }
+        .bg-navy-700 { background-color: #1a237e; }
+        .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-navy-900">
+   <!-- Navbar -->
+   <nav class="bg-navy-900 text-white py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="moon" class="w-8 h-8 text-blue-400"></i>
+                <span class="text-xl font-bold">DreamTrack</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="/Home.html" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="/Benefits.html" class="hover:text-blue-400 transition-colors">Benefits</a>
+                <a href="/Features.html" class="hover:text-blue-400 transition-colors">Features</a>
+                <a href="/Company.html" class="hover:text-blue-400 transition-colors">Our Company</a>
+            </div>
+            
+            <button class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Our Company Section -->
+    <section id="company" class="py-20 bg-navy-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-8">About DreamTrack</h2>
+            <p class="text-xl text-blue-200 mb-4">We are committed to helping you improve your health with the best sleep tracking technology.</p>
+            <p class="text-lg text-blue-200">Our mission is to empower individuals to take control of their sleep patterns, improving their overall health and well-being.</p>
+            <a href="https://en.wikipedia.org/wiki/Dream"><button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full transition-colors mt-8">
+                Learn More About Us
+            </button></a>
+        </div>
+    </section>
+
+    <!-- New: Enhanced Timeline Section -->
+    <section id="timeline" class="py-20 bg-navy-700 text-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Our Journey</h3>
+            <div class="relative flex justify-center items-center space-x-8">
+                <!-- Timeline Item -->
+                <div class="text-center">
+                    <div class="bg-blue-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4">
+                        <i data-lucide="rocket" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold">2020</h4>
+                    <p class="text-blue-200">Founded with a vision to revolutionize sleep tracking.</p>
+                </div>
+                <!-- Divider -->
+                <div class="w-16 h-1 bg-blue-500"></div>
+                <!-- Timeline Item -->
+                <div class="text-center">
+                    <div class="bg-blue-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4">
+                        <i data-lucide="star" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold">2021</h4>
+                    <p class="text-blue-200">First product launch, reaching 1M+ users.</p>
+                </div>
+                <!-- Divider -->
+                <div class="w-16 h-1 bg-blue-500"></div>
+                <!-- Timeline Item -->
+                <div class="text-center">
+                    <div class="bg-blue-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4">
+                        <i data-lucide="globe" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold">2022</h4>
+                    <p class="text-blue-200">Expanded globally to 30+ countries.</p>
+                </div>
+                <!-- Divider -->
+                <div class="w-16 h-1 bg-blue-500"></div>
+                <!-- Timeline Item -->
+                <div class="text-center">
+                    <div class="bg-blue-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4">
+                        <i data-lucide="award" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold">2023</h4>
+                    <p class="text-blue-200">Awarded Best Sleep Tech Innovation.</p>
+                </div>
+                <!-- Divider -->
+                <div class="w-16 h-1 bg-blue-500"></div>
+                <!-- Timeline Item -->
+                <div class="text-center">
+                    <div class="bg-blue-500 text-white w-16 h-16 flex items-center justify-center rounded-full mb-4">
+                        <i data-lucide="heart" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold">2024</h4>
+                    <p class="text-blue-200">10M+ users worldwide improving their sleep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New: Meet the Team Section -->
+    <section id="team" class="py-20 bg-navy-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-8">Meet Our Team</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="bg-navy-700 p-6 rounded-lg">
+                    <img src="./t5.png" alt="Emily Johnson" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-semibold">Ashutosh Kumar Gupta</h4>
+                    <p class="text-blue-200">CEO & Founder</p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg">
+                    <img src="./t4.jpg" alt="Mark Lee" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-semibold">Aman Sarkar</h4>
+                    <p class="text-blue-200">CTO</p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg">
+                    <img src="./t2.jpg" alt="Sophia Chen" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-semibold">Aditya Raj Patel</h4>
+                    <p class="text-blue-200">Head of Marketing</p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg">
+                    <img src="./t3.jpg" alt="James Brown" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-semibold">Akshit Jawla</h4>
+                    <p class="text-blue-200">Lead Developer</p>
+                </div>
+                <div class="bg-navy-700 p-6 rounded-lg">
+                    <img src="./t1.jpg" alt="Anna White" class="rounded-full mx-auto mb-4">
+                    <h4 class="text-lg font-semibold">Anushika Sadhwani</h4>
+                    <p class="text-blue-200">Data Scientist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

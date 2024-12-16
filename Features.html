@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - DreamTrack</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .bg-navy-900 { background-color: #070d1f; }
+        .bg-navy-800 { background-color: #0d1b3e; }
+        .bg-navy-700 { background-color: #1a237e; }
+        .hover-scale:hover { transform: scale(1.05); transition: transform 0.3s ease; }
+    </style>
+</head>
+<body class="bg-navy-900">
+   <!-- Navbar -->
+   <nav class="bg-navy-900 text-white py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-lucide="moon" class="w-8 h-8 text-blue-400"></i>
+                <span class="text-xl font-bold">DreamTrack</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="/Home.html" class="hover:text-blue-400 transition-colors">Home</a>
+                <a href="/Benefits.html" class="hover:text-blue-400 transition-colors">Benefits</a>
+                <a href="/Features.html" class="hover:text-blue-400 transition-colors">Features</a>
+                <a href="/Company.html" class="hover:text-blue-400 transition-colors">Our Company</a>
+            </div>
+            
+            <button class="md:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-navy-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-white text-center mb-16">How Sleep Tracking Helps You</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-navy-800 rounded-lg p-8 hover:bg-navy-700 transition-colors">
+                    <i data-lucide="line-chart" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Detailed Sleep Analytics</h3>
+                    <p class="text-blue-200">Get comprehensive insights into your sleep patterns with detailed graphs and trends analysis.</p>
+                </div>
+                
+                <div class="bg-navy-800 rounded-lg p-8 hover:bg-navy-700 transition-colors">
+                    <i data-lucide="bell" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Smart Alarms</h3>
+                    <p class="text-blue-200">Wake up naturally during your lightest sleep phase with our intelligent alarm system.</p>
+                </div>
+                
+                <div class="bg-navy-800 rounded-lg p-8 hover:bg-navy-700 transition-colors">
+                    <i data-lucide="calendar" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Sleep Schedule</h3>
+                    <p class="text-blue-200">Maintain a consistent sleep schedule with personalized recommendations.</p>
+                </div>
+                
+                <div class="bg-navy-800 rounded-lg p-8 hover:bg-navy-700 transition-colors">
+                    <i data-lucide="smartphone" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-white mb-4">Cross-Platform Sync</h3>
+                    <p class="text-blue-200">Access your sleep data across all your devices with seamless synchronization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
